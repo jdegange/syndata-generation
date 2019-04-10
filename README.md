@@ -2,6 +2,30 @@
 
 This code is used to generate synthetic scenes for the task of instance/object detection. Given images of objects in isolation from multiple views and some background scenes, it generates full scenes with multiple objects and annotations files which can be used to train an object detector. The approach used for generation works welll with region based object detection methods like [Faster R-CNN](https://github.com/rbgirshick/py-faster-rcnn).
 
+## Run this in Docker and it's easier.
+'''
+# Run the container
+1. docker login
+2. docker run -it -d -p 6006:6006 -p 8888:8888 -w /home/ -v /home/jdegange/SynDataGenerator/:/home/ --name=jld_synth_data_gen --runtime=nvidia tensorflow/tensorflow:latest-gpu-jupyter
+3. docker exec -it jld_synth_data_gen bash
+'''
+
+## Install dependencies
+'''
+1. apt-get update
+2. apt install -y libsm6 libxext6
+3. pip install pyamg
+4. apt-get install python-tk
+5. pip install opencv-python
+6. pip install Pillow
+7. apt-get install wget
+8. wget https://raw.githubusercontent.com/yskmt/pb/master/pb.py
+
+## Now we can finally run the demo
+python dataset_generator.py ./demo_data_dir/ ./output_dir/
+
+'''
+
 ## Pre-requisites 
 1. OpenCV (pip install opencv-python)
 2. PIL (pip install Pillow)
