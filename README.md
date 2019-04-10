@@ -8,7 +8,6 @@ This code is used to generate synthetic scenes for the task of instance/object d
 1. docker login
 2. docker run -it -d -p 6006:6006 -p 8888:8888 -w /home/ -v /home/jdegange/SynDataGenerator/:/home/ --name=jld_synth_data_gen --runtime=nvidia tensorflow/tensorflow:latest-gpu-jupyter
 3. docker exec -it jld_synth_data_gen bash
-'''
 
 ## Install dependencies
 '''
